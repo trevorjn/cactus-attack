@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://reclgm81rdic"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_lht2f"]
+[ext_resource type="Texture2D" uid="uid://dnbl8ny6fpins" path="res://player/tipi.png" id="2_avq3d"]
+[ext_resource type="AudioStream" uid="uid://fustppbv02cb" path="res://sounds/slap 1.wav" id="3_ptcx3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4iif"]
+radius = 16.0
+height = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(583, 342)
+script = ExtResource("1_lht2f")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_d4iif")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_avq3d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ptcx3")

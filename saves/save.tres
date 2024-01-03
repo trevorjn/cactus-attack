@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3 uid="uid://domareoahk7o"]
+
+[ext_resource type="Script" path="res://saves/save_data.gd" id="1_fcdn8"]
+
+[resource]
+script = ExtResource("1_fcdn8")
+best_time = 18.8656

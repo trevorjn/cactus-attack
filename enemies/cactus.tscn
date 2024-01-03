@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqojbo06bry6m"]
+
+[ext_resource type="Script" path="res://enemies/cactus.gd" id="1_x50hi"]
+[ext_resource type="Texture2D" uid="uid://pd7ctfj0ia1h" path="res://enemies/cactus.png" id="2_pgmdu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1fup"]
+radius = 16.0
+
+[node name="Cactus" type="Area2D"]
+script = ExtResource("1_x50hi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_pgmdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c1fup")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

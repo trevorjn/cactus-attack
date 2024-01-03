@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbpq3t1ter8ve"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_6jcuw"]
+[ext_resource type="PackedScene" uid="uid://jvo3sitjuagd" path="res://world/world.tscn" id="1_jqgxf"]
+[ext_resource type="PackedScene" uid="uid://reclgm81rdic" path="res://player/player.tscn" id="1_qd6q5"]
+[ext_resource type="PackedScene" uid="uid://bdkn7ixu1dm21" path="res://ui/hud.tscn" id="3_raif5"]
+[ext_resource type="PackedScene" uid="uid://dqojbo06bry6m" path="res://enemies/cactus.tscn" id="4_2tcc7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_6jcuw")
+
+[node name="World" parent="." instance=ExtResource("1_jqgxf")]
+
+[node name="Player" parent="." instance=ExtResource("1_qd6q5")]
+position = Vector2(194, 481)
+
+[node name="Cactus" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_2tcc7")]
+position = Vector2(493, 366)
+scale = Vector2(2, 2)
+player = NodePath("../Player")
+
+[node name="HUD" parent="." instance=ExtResource("3_raif5")]
